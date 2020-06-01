@@ -1,0 +1,11 @@
+[flake8]
+# Long lines are not an excuse to cause diff churn.
+# Short lines are not an excuse to break readability.
+max-line-length = 100
+
+# I would like to use hang-closing, but
+# add-trailing-commas pre-commit hook is not configurable.
+#
+# https://www.flake8rules.com/rules/E133.html
+# https://www.python.org/dev/peps/pep-0008/
+# hang-closing = True

@@ -2,4 +2,18 @@
 set -eEu
 set -o pipefail
 
-:
+################################################################################
+# Run the test harness. Invoke as "sdlc/test".
+################################################################################
+. sdlc/functions.sh
+
+readonly SCHEMA="foal/schema/acronyms.yaml"
+echo "[INFO] Check data against schema file ${SCHEMA}"
+for FILE in foal/data/*.yaml; do
+    echo -n "${FILE}: "
+    pykwalify -s "${SCHEMA}" -d "${FILE}"
+done
+
+echo
+echo "[INFO] Run declarative checks"
+pre-commit run -c sdlc/pre-commit-config.yaml --all-files

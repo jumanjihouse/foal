@@ -1,0 +1,13 @@
+---
+acronyms:
+    cogs:
+        shortform: COGS
+        longform: Cost of Goods Sold
+
+    cpu:
+        shortform: CPU
+        longform: Cost per Unit
+
+    eps:
+        shortform: EPS
+        longform: Earnings per Share

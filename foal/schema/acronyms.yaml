@@ -1,0 +1,48 @@
+---
+type: map
+mapping:
+    acronyms:
+        desc: |
+            Dictionary of acronyms.
+            Acronyms do not have to be in their own file, and
+            acronyms do not have to be in YAML.
+            The data must be in this structure to parse.
+        required: true
+        type: map
+        mapping:
+            '=':
+                desc: |
+                    Acronym as used in a doc source, such as "cpu".
+
+                    Automated tools use tool-specific syntax, such as "[!cpu]"
+                    or "{{cpu}}, to recognize acronyms.
+                    The specific syntax varies based on the automated tool.
+
+                    Acronyms are case-sensitive within data
+                    because most tools treat case differently.
+                type: map
+                mapping:
+                    shortform:
+                        desc: |
+                            Short form of the expanded acronym, such as "CPU".
+                        required: true
+                        type: str
+                    longform:
+                        desc: |
+                            Expanded form of the abbreviation,
+                            such as "Central Processing Unit".
+
+                            The first instance of "[!cpu]" in the doc is
+                            automatically expanded to "<longform> (<shortform>)".
+                            Example:
+                            "[!cpu]" expands to
+                            "Central Processing Unit (CPU)" on first occurrence and
+                            "CPU" on other occurrences.
+                        required: true
+                        type: str
+                    '=':
+                        desc: |
+                            Any other metadata about the acronym.
+                            This allows to extend the schema for other purposes.
+                        required: false
+                        type: any
