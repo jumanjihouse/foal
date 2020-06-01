@@ -2,4 +2,28 @@
 set -eEu
 set -o pipefail
 
-:
+################################################################################
+# Build and install gem as your user. Invoke as "sdlc/build".
+################################################################################
+. sdlc/functions.sh
+
+# It is critical to remove build/ and other intermediate directories
+# between builds/installs/tests.
+# Python setup does not sync them to your tree.
+#
+# -X (Big X) means to remove git-ignored files and only git-ignored files.
+echo "[INFO] Clean intermediate build files to avoid contamination from prior builds"
+git clean --force -X -- .
+
+echo
+echo "[INFO] Install foal for local user"
+"${PIP}" install --user .
+
+echo
+echo "[INFO] Show package details"
+"${PIP}" show --files foal
+
+echo
+echo "[INFO] Show installed files"
+LOCATION="$(pip3 show foal | awk '/Location/ {print $NF}')"
+find "${LOCATION}/foal"

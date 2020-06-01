@@ -1,0 +1,9 @@
+---
+acronyms:
+    cpu:
+        shortform: CPU
+        longform: Central Processing Unit
+
+    eps:
+        shortform: EPS
+        longform: Encapsulated Postscript
