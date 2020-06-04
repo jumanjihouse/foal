@@ -1,5 +1,7 @@
 # FOAL
 
+[![PyPI version](https://badge.fury.io/py/foal.svg)](https://badge.fury.io/py/foal)
+
 FOAL (From Organization Acronyms Lookup) is a tool to lookup acronyms from a set
 of YAML files.
 
@@ -11,6 +13,9 @@ dictionaries in a contextually-sensitive order and lookup acronyms.
 - [What](#what)
 - [Why](#why)
 - [About the data structure](#about-the-data-structure)
+- [Installation](#installation)
+  - [From PyPI](#from-pypi)
+  - [From source](#from-source)
 - [Development](#development)
 
 <!--TOC-->
@@ -95,7 +100,7 @@ acronyms:
         source: finance.yaml
 ```
 
-Lookup specific acronyms that prefer the finance context:
+Lookup specific acronyms that prefer the technology context:
 
 ```shell
 $ foal -p technology.yaml -a cpu
@@ -158,6 +163,21 @@ misunderstanding in important documents.
 
 A formal [Kwalify](https://directory.fsf.org/wiki/Kwalify) schema
 for the format is in [`schema/acronyms.yaml`](schema/acronyms.yaml).
+
+
+## Installation
+
+### From PyPI
+
+```bash
+pip install --user foal
+```
+
+### From source
+
+```bash
+pip install --user .
+```
 
 
 ## Development
