@@ -21,7 +21,7 @@
 # You should have received a copy of the GNU General Public License
 # along with foal.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
-"""FOAL (From Official Acronyms Lookup) is a tool to lookup acronyms from a set of YAML files."""
+"""FOAL (From Org Acronyms Lookup) is a tool to lookup acronyms from a set of YAML files."""
 from setuptools import find_packages
 from setuptools import setup
 

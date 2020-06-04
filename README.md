@@ -1,6 +1,6 @@
 # FOAL
 
-FOAL (From Official Acronyms Lookup) is a tool to lookup acronyms from a set
+FOAL (From Organization Acronyms Lookup) is a tool to lookup acronyms from a set
 of YAML files.
 
 Given multiple YAML files that define acronyms and abbreviations, merge the
