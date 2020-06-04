@@ -89,5 +89,9 @@ pylint.....................................................................Passe
 autopep8...................................................................Passed
 flake8.....................................................................Passed
 
+[INFO] Check that long description should render correctly on PyPI
+Checking dist/foal-0.0.1-py3-none-any.whl: PASSED
+Checking dist/foal-0.0.1.tar.gz: PASSED
+
 [PASS] sdlc/test OK
 ```

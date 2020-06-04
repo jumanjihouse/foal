@@ -17,3 +17,7 @@ done
 echo
 echo "[INFO] Run declarative checks"
 pre-commit run -c sdlc/pre-commit-config.yaml --all-files
+
+echo
+echo "[INFO] Check that long description should render correctly on PyPI"
+twine check dist/*

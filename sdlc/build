@@ -27,3 +27,7 @@ echo
 echo "[INFO] Show installed files"
 LOCATION="$(pip3 show foal | awk '/Location/ {print $NF}')"
 find "${LOCATION}/foal"
+
+echo
+echo "[INFO] Build distributions"
+"${PYTHON}" setup.py sdist bdist_wheel

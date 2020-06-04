@@ -29,17 +29,17 @@ err() {
 }
 
 if command -v python3 &>/dev/null; then
-    PYTHON_USER_BASE="$(python3 -c "import site; print(site.USER_BASE)")"
+    PYTHON="python3"
 elif command -v python &>/dev/null; then
+    PYTHON="python"
     PYTHON_MAJOR_VER="$(python -c "import sys; print(sys.version_info[0])")"
     if [[ "${PYTHON_MAJOR_VER}" -ne "3" ]]; then
         echo "[FAIL] Could not find python version 3+"
         exit 1
     fi
-
-    PYTHON_USER_BASE="$(python -c "import site; print(site.USER_BASE)")"
 fi
 
+PYTHON_USER_BASE="$("${PYTHON}" -c "import site; print(site.USER_BASE)")"
 if ! grep "${PYTHON_USER_BASE}/bin" <(printenv PATH) &>/dev/null; then
     echo "[INFO] Adding Python user path to PATH from $0"
     export PATH="${PATH}:${PYTHON_USER_BASE}/bin"
