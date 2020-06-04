@@ -2,4 +2,10 @@
 set -eEu
 set -o pipefail
 
-:
+################################################################################
+# Publish to PyPI. Invoke as "sdlc/publish".
+################################################################################
+. sdlc/functions.sh
+
+# https://pypi.org/project/twine/
+twine upload --non-interactive --skip-existing dist/*
