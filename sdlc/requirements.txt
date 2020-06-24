@@ -1,3 +1,3 @@
 pre-commit==2.5.1
 pykwalify==1.7.0
-twine==3.1.1
+twine==3.2.0
