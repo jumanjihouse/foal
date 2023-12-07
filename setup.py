@@ -58,7 +58,7 @@ setup(
     ],
     python_requires=">=3.5, <4",
     install_requires=[
-        "identify>=1.4.18, <2",
+        "identify>=2.5.33, <3",
         "ruamel.yaml>=0.16.10, <1",
     ],
     packages=find_packages(),
